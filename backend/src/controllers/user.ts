@@ -1,6 +1,7 @@
-import {Request , Response}from 'express'
+import {Request , Response} from 'express'
 
 import { CreateUserServices } from "../services/createUserServices";
+import { LoginServices } from '../services/loginServices';
 
 type UseObject ={
     cpf: String,
@@ -21,6 +22,19 @@ export class User {
         const result = services.save(data)
 
         return result
+    }
+    async login(request: Request , response : Response){
+
+        const { cpf , password } = request.body
+        let data ={
+            cpf: cpf,
+            password : password,
+            response : response
+        }
+
+        let service = new LoginServices()
+
+        let result = service.login(data)
     }
 
     async update(){
