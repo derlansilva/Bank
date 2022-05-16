@@ -16,16 +16,11 @@ export class User {
         const {cpf , name , username , email , password } = request.body
 
         const services = new CreateUserServices()
-        const data ={
-            cpf :cpf,
-            name: name,
-            username: username,
-            email :email,
-            password:password
-        }
+        const data ={cpf :cpf,name: name,username: username,email :email,password:password,response : response}
+       
         const result = services.save(data)
 
-        return response.json(result)
+        return result
     }
 
     async update(){

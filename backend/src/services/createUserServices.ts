@@ -1,5 +1,5 @@
 import {hash} from 'bcrypt'
-
+import {Response} from 'express'
 import { prismaCLient } from "../prisma"
 import { checkCpf } from "../utils/checkCpf"
 
@@ -8,7 +8,8 @@ type UseObject ={
     name: string,
     username: string
     email: string
-    password: string
+    password: string,
+    response: Response
 }
 
 export class CreateUserServices{
@@ -34,9 +35,10 @@ export class CreateUserServices{
                     }
                 })
 
-                return user
+                return data.response.json(user)
+            }else{
+                return data.response.json(user)
             }
-
         }
    }
 }
