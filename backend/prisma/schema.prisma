@@ -6,6 +6,52 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url= "file:.dev.db"
+}
+
+
+model User{
+  cpf String @id @default( uuid()) @unique
+  username String @unique
+  name String
+  email String @unique
+  password String
+
+  pix Pix[]
+  deposit Deposit[]
+  transfer Transfer[]
+  @@map("users")
+}
+
+model Deposit{
+  id String @id @default(uuid()) @unique
+  value Float
+  user User @relation(fields: [user_id], references: [cpf])
+
+  user_id String
+
+  @@map("deposit")
+}
+
+model Pix{
+  key String @id @default(uuid()) @unique
+  user User @relation(fields: [user_id] , references: [cpf])
+  user_id String
+
+  transfer Transfer[]
+  @@map("pix")
+}
+
+model Transfer{
+  id Int @id @default(autoincrement())
+  value Float
+  date DateTime @default(now())
+  user User @relation(fields: [user_id] , references: [cpf])
+  pix Pix @relation(fields: [key] , references: [key])
+
+  user_id String
+  key String
+
+  @@map("transfer")
 }
