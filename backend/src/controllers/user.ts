@@ -2,6 +2,7 @@ import {Request , Response} from 'express'
 
 import { CreateUserServices } from "../services/createUserServices";
 import { LoginServices } from '../services/loginServices';
+import { ShowUserServices } from '../services/showUserServices';
 
 type UseObject ={
     cpf: String,
@@ -12,6 +13,7 @@ type UseObject ={
 }
 
 export class User {
+    
     async save(request:Request , response: Response){
 
         const {cpf , name , username , email , password } = request.body
@@ -36,6 +38,19 @@ export class User {
 
         let result = service.login(data)
     }
+   async show(request : Request , response : Response){
+
+    console.log(request)
+       const id = request.headers.id
+
+       console.log('no user' , id)
+       const user_id = String(id)
+
+       const service = new ShowUserServices()
+
+       const show =await service.show(user_id)
+       return response.json(show)
+   }
 
     async update(){
 

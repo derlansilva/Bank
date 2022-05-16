@@ -17,7 +17,7 @@ export function authenticte(request : Request , response :  Response , next: Nex
 
     try {
         const sub = verify(token , String(process.env.MY_SECRET) ) as YpayLoad
-        request.user_id
+        //request.user_id
         next()
 
     } catch (error) {
