@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@prisma/client": "^3.14.0",
+    "@types/jsonwebtoken": "^8.5.8",
     "@types/socket.io": "^3.0.2",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
