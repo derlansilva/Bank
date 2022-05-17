@@ -1,16 +1,9 @@
 import {Request , Response} from 'express'
 
-import { CreateUserServices } from "../services/createUserServices";
-import { LoginServices } from '../services/loginServices';
-import { ShowUserServices } from '../services/showUserServices';
+import { CreateUserServices } from "../services/userServices/createUserServices";
+import { LoginServices } from '../services/userServices/loginServices';
+import { ShowUserServices } from '../services/userServices/showUserServices';
 
-type UseObject ={
-    cpf: String,
-    name: String,
-    username: string
-    email: string
-    password: string
-}
 
 export class User {
     

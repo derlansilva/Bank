@@ -1,7 +1,7 @@
 import {hash} from 'bcrypt'
 import {Response} from 'express'
-import { prismaCLient } from "../prisma"
-import { checkCpf } from "../utils/checkCpf"
+import { prismaCLient } from "../../prisma"
+import { checkCpf } from "../../utils/checkCpf"
 
 type UseObject ={
     cpf: string,

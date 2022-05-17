@@ -1,7 +1,7 @@
 import { compare } from 'bcrypt'
 import {response, Response} from 'express'
 import { sign } from 'jsonwebtoken'
-import { prismaCLient } from '../prisma'
+import { prismaCLient } from '../../prisma'
 type DataÛser ={
     cpf: string,
     password: string,

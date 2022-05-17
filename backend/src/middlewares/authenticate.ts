@@ -12,12 +12,12 @@ export function authenticte(request : Request , response :  Response , next: Nex
             message:" token invalid"
         })
     }
-
     const [,token ] = authToken.split(" ")
 
     try {
+
         const sub = verify(token , String(process.env.MY_SECRET) ) as YpayLoad
-        //request.user_id
+     
         next()
 
     } catch (error) {
