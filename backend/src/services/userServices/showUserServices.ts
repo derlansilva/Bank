@@ -6,6 +6,15 @@ export class ShowUserServices{
        const user = await prismaCLient.user.findFirst({
            where: {
                cpf: user_id
+           },
+           include:{
+               deposit:{
+
+               },
+               pix:{
+
+               }
+
            }
        })
 
