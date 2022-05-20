@@ -1,8 +1,9 @@
 import { View, Text, StyleSheet, Button , TextInput } from "react-native"
 import { SafeAreaView } from "react-navigation";
+ 
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
-
-import {styles } from './loginstyles'
+import {styles , Input, Botton , TextDecoret} from './loginstyles'
 
 export const Login = ({navigation}) => {
     const handleSignUUp =( ) => {
@@ -14,17 +15,17 @@ export const Login = ({navigation}) => {
                  <Text style={styles.logo}>+Bank</Text>
             </View>
             <SafeAreaView style={styles.contentarea}> 
-              
-                <TextInput
-                    style={styles.input} placeholder="CPF" 
+                <TextDecoret>CPF</TextDecoret>
+                <Input
+
                     placeholderTextColor = "#190C26"
                
                     keyboardType="numeric"
                  />
-            
-                <TextInput 
-                    style={styles.input} 
-                    placeholder="SENHA"
+                <TextDecoret>SENHA</TextDecoret>
+                <Input 
+                
+        
                     placeholderTextColor = "#190C26"
                     keyboardType="phone-pad"
                     secureTextEntry={true}
@@ -33,11 +34,12 @@ export const Login = ({navigation}) => {
             
 
                 <View style={styles.button}>
-                <Button onPress={() => navigation.navigate('home')} title="Sign" color="#fff"/>
+                <Button onPress={() => navigation.navigate('home')} title="CONTINUAR" color="#fff"/>
                 </View>
 
-                <View style={styles.button}>
-                    <Button onPress={handleSignUUp}  title="SignUp"  color="#fff"/>
+                <View style={styles.buttontext}>
+                    <Button onPress={handleSignUUp}  title="Abrir conta"  color="#fff"/>
+                    <Icon name="arrow-right" size={40} color="#fff" />
                 </View>
             </SafeAreaView>
         

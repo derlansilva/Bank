@@ -1,130 +1,65 @@
+import styled from 'styled-components/native'
+import { Animated } from 'react-native';
 
-import { StyleSheet } from "react-native"
+export const Container = styled.View`
+    flex: 1;
+    background: #06A8B1;
+    justify-content:center;
+`;
 
-export const styles = StyleSheet.create({
-    home: {
-        flex: 1,
-        flexDirection: 'column',
-        width: '100%',
-        height: '100%',
-        backgroundColor: '#190C26'
-    },
-    head: {
-        display: 'flex',
-        flex: 1,
-        width: '100%',
-        height:'20%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color:'#caced4'
-    },
-    content: {
-        
-        width: '100%',
-        height: '80%',
-        backgroundColor: '#72758C'
-    },
-    headlogo:{
-        position: 'absolute',
-        flex : 1,
-      
-        width: '50%',
-        height: '100%',
-        left: 0,
- 
-    },
-    headuser: {
-        position: 'absolute',
-        flex : 1,
-       
-        width: '50%',
-        height: '100%',
-        right: 0,
-    },
-    logo: {
-        position: 'absolute',
-        marginTop: 30,
-        width: '50%',
-        left: 5,
-        fontSize: 30,
-        color: '#caced4',
-        borderColor: 'red',
-    },
-    username: {
-        position: 'absolute',
-        marginTop: 40,
-        width: '50%',
-        right: 5,
-        color: '#caced4',
-        borderColor: 'red',
-    },
-    contenthome:{
-        display: 'flex',
-        marginTop:-30,
-        alignItems: 'center',
-        width:'100%',
-        height : '100%',
-    },
-    contentvalue:{
+
+export const Content = styled.View`
+    flex: 1;
+    max-height: 400px;
+    z-index: 5;
+
+`
+
+export const Card = styled(Animated.View)`
+    flex: 1;
+    background: #fff;
+    border-radius : 4px;
+    margin: 0 20px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right:0;
+    top: 0;
+`;
+
+export const CardHeader = styled.View`
     
-        justifyContent:'center',
-        width: '80%',
-        height:90,
-        backgroundColor: '#caced4',
-        borderRadius: 5,
-        color: '#190C26',
-       
-    },
-    value: {
-        
-        fontSize: 30,
-       
-    },
-    contenttransitions: {
-     
-        flexDirection: 'row',
-        justifyContent:'center',
-        marginTop: 30,
-        width: '100%',
-        height:90,
-      
-        borderRadius: 5,
-        color: '#190C26',
-    },
-    card1: {
-      
-        alignItems: 'center',
-        justifyContent: 'center',
-        left:10,
-        width: '50%',
-        
-    },
-    card2: {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items : center;    
+    padding: 30px;
+`;
+
+export const CardContend = styled.View`
+    flex: 1;
+    padding : 0 30px;
+    justify-content: center;
     
-        alignItems: 'center',
-        justifyContent: 'center',
-        right:10,
-        width: '50%',
-  
-    },
-    cardsend:{
-        
-        alignItems:'center',
-        justifyContent: 'center',
-        width:60,
-        height: 60,
-        backgroundColor: '#caced4',
-        borderRadius: '50%',
-  
-    },
-    cardreceived: {
-        alignItems:'center',
-        justifyContent: 'center',
-        width:60,
-        height: 60,
-        borderRadius: '50%',
-        backgroundColor: '#caced4',
-        
-        
-    }
-})
+`;
+
+export const Title = styled.Text`
+    font-size: 13px;
+    color: #999;
+`;
+
+export const Description = styled.Text`
+    font-size: 32px;
+    margin-top: 3px;
+    color: #333;
+`;
+
+export const CardFooter = styled.View`
+    padding:30px;
+    background: #eee;
+    border-radius: 4px;
+`;
+
+export const Annotation = styled.Text`
+    font-size: 12px;
+    color: #333;
+`;

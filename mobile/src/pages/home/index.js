@@ -1,41 +1,67 @@
-import { View, Text } from "react-native";
+import Icon from 'react-native-vector-icons/MaterialIcons' 
+import { Header } from "../../components/Header";
+import { Tabs } from "../../components/Tabs";
 
 
-import { styles } from "./styles";
+import { Animated } from 'react-native';
+import { PanGestureHandler , State } from 'react-native-gesture-handler';
 
-export function Home() {
+import { Container,CardHeader , Content , Card , CardContend ,CardFooter , Title , Description,Annotation} from "./styles";
+import { Menu } from '../../components/Menu';
+
+export function Home({navigation}) {
+    const translateY = new Animated.Value(0);
+
+    const animatedEvent = Animated.event(
+      [
+        {
+          nativeEvent: {
+            translationY: translateY,
+          },
+        },
+      ],
+      { useNativeDriver: true },
+    );
+
+    
+    function onHandlerStateChanged(event){
+
+    }
     return (
-        <View style={styles.home}>
-            <View style={styles.head}>
-                <View style={styles.headlogo}>
-                    <Text style={styles.logo}>+Bank</Text>
-                </View>
-                <View style={styles.headuser}>
-                    <Text style={styles.username}>username</Text>
-                </View>
-            </View>
-
-            <View style={styles.content}>
-                <View style={styles.contenthome}>
-                    <View style={styles.contentvalue}>
-                        <Text style={styles.value}>R$ 1200,00</Text>
-                    </View>
-                    <View style={styles.contenttransitions}>
-                        <View style={styles.card1}>
-                            <View style={styles.cardsend}>
-                                <Text>Enviar</Text>
-                            </View>
-
-                        </View>
-                        <View style={styles.card2}>
-                            <View style={styles.cardreceived}>
-                                <Text>Receber</Text>
-                            </View>
-                        </View>
-                    </View>
-
-                </View>
-            </View>
-        </View>
+        <Container>
+            <Header/>
+            <Content>
+                <Menu translateY={translateY}/>
+                <PanGestureHandler
+                     onGestureEvent={animatedEvent}
+                     onHandlerStateChange={onHandlerStateChanged}
+                >
+                    <Card style={{
+              transform: [{
+                translateY: translateY.interpolate({
+                  inputRange: [-350, 0, 380],
+                  outputRange: [-50, 0, 380],
+                  extrapolate: 'clamp',
+                }),
+              }],
+            }}
+            >
+                        <CardHeader>
+                            <Icon name="attach-money" size={28}  color="#666"/>
+                            <Icon name="visibility-off" size={28}  color="#666"/>
+                        </CardHeader> 
+                        <CardContend>
+                            <Title>Saldo</Title>
+                            <Description>R$  197.990,00 </Description>
+                        </CardContend>
+                        <CardFooter>
+                            <Annotation>Transferencia de R$ 20,00 recebida de Alinne fonseca hoje  as 10 horas </Annotation>
+                        </CardFooter>
+                    </Card>
+                </PanGestureHandler>
+               
+            </Content>
+            <Tabs translateY={translateY}/>
+        </Container>
     )
 }
