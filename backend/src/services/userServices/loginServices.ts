@@ -11,6 +11,7 @@ type DataÛser ={
 export class LoginServices{
     async login(data:DataÛser){
         let {cpf, password , response} = data
+
         let user  = await prismaCLient.user.findFirst({
             where:{
                 cpf: cpf

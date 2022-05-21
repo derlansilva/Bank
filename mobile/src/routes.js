@@ -7,6 +7,7 @@ import { TypedNavigator } from "@react-navigation/core"
 import { Login } from "./pages/login"
 import { Home } from "./pages/home"
 import { SignUp } from "./pages/signUp"
+import { Menu } from "./components/Menu"
 
 const Stack = createStackNavigator()
 
@@ -18,7 +19,7 @@ export function Routes(){
                 <Stack.Screen name="login" component={Login}/>
                 <Stack.Screen name="signUp" component={SignUp}/>
                 <Stack.Screen name="home" component={Home}/>
-
+                <Stack.Screen name="menu" component={Menu}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

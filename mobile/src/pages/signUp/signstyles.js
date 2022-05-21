@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native"
 import styled from 'styled-components/native'
 
 export const Input = styled.TextInput`
-    width: 80%;
+    width: 100%;
     height: 50px;
     font-size : 20px;
     border-bottom-width: ${StyleSheet.hairlineWidth}px;
@@ -14,13 +14,18 @@ export const Input = styled.TextInput`
 
 export const TextDecoret = styled.Text`
     color: #FFF;
-    width: 80%;
+    width: 100%;
     opacity: 0.5;
 `
 
 export const ButtonBack = styled.Button`
     position: absolute;
     letft: 0;
+`
+
+export const ViewArea = styled.View`
+    width: 80%;
+
 `
 
 export const styles = StyleSheet.create({

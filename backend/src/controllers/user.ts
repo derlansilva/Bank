@@ -21,6 +21,9 @@ export class User {
     async login(request: Request , response : Response){
 
         const { cpf , password } = request.body
+
+        console.log(cpf , password)
+        
         let data ={
             cpf: cpf,
             password : password,

@@ -2,22 +2,27 @@ import { useEffect, useState } from "react"
 import { View, Text, StyleSheet, Button,SafeAreaView , TextInput } from "react-native"
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
-import {styles , Input , TextDecoret , ViewItem} from './signstyles'
+import {styles , Input , TextDecoret , ViewArea} from './signstyles'
 export function SignUp({navigation}){
     const [confirm , setConfirm ] = useState(true)
     const [begin , setBegin] = useState(0)
     const [last , setLast] = useState(1)
     const [cpf, setCpf] = useState('')
+    const [name , setName] = useState('')
+    const [username , setUsername] = useState('')
+    const [email , setEmail] = useState('')
+    const [password , setPassword] = useState('')
+    const [confirmPassword , setConfirmPassword] = useState('')
     const set =["setCpf" , "setName"  ,"setUsername" , "setEmail" , "setPassword" ,  "setConfirm"]
     const listItems = [
         {item: "CPF", keyboardType : 'numeric' , value : cpf , set: setCpf} , 
-        {item:"NOME COMPLETO", value : cpf , set: setCpf },
-        {item: "COMO GOSTARIA DE SER CHAMADO?",  value : cpf , set: setCpf  } ,
-        {item:  "E-MAIL" , value : cpf , set: setCpf  },
-        {item: "SENHA" , keyboardType : 'numeric', value : cpf , set: setCpf  } , 
-        {item: "CONFIRMAÇAO DE SENHA" , keyboardType : 'numeric' , value : cpf , set: setCpf }
+        {item:"NOME COMPLETO", value : name , set: setName },
+        {item: "COMO GOSTARIA DE SER CHAMADO?",  value : username , set: setUsername  } ,
+        {item:  "E-MAIL" , value : email , set: setEmail  },
+        {item: "SENHA" , keyboardType : 'numeric', value : password , set: setPassword  } , 
+        {item: "CONFIRMAÇAO DE SENHA" , keyboardType : 'numeric' , value : confirmPassword , set: setConfirmPassword }
         ]
-    const item =[]
+
     useEffect(()=> {
         
         console.log('cpf' , cpf , cpf.length)
@@ -47,8 +52,8 @@ export function SignUp({navigation}){
             <SafeAreaView style={styles.contentarea}> 
                 {listItems.slice(begin,last).map((item, index) => {
                     return(
-                        <>
-                          <TextDecoret key={index}>{item.item}</TextDecoret>
+                        <ViewArea key={index}>
+                            <TextDecoret key={index}>{item.item}</TextDecoret>
                             <Input 
                                 keyboardType={item.keyboardType ? item.keyboardType : ''} 
                                 value={item.value}
@@ -56,7 +61,7 @@ export function SignUp({navigation}){
                                 
                              />
                 
-                        </>
+                        </ViewArea>
     
                     )
                 })}

@@ -8,6 +8,7 @@ export const Input = styled.TextInput`
     border-bottom-color: rgba(255,255,255 ,0.8)
     color: #FFF;
     margin-bottom: 10px;
+    font-size: 20px;
 `
 
 export const Botton = styled.View`
@@ -57,6 +58,7 @@ export const styles = StyleSheet.create({
         margin: 10,
         color: '#fff',
         padding: 10,
+        fontSize:30,
     },
     button:{
         width: 300,
