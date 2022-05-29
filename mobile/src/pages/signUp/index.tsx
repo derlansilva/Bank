@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react"
 import { View, Text, StyleSheet, Button,SafeAreaView , TextInput } from "react-native"
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { useNavigation } from "@react-navigation/native";
 
 import {styles , Input , TextDecoret , ViewArea} from './signstyles'
-export function SignUp({navigation}){
+
+export const SignUp:React.FC =() =>{
+    
+    const navigation = useNavigation()
     const [confirm , setConfirm ] = useState(true)
     const [begin , setBegin] = useState(0)
     const [last , setLast] = useState(1)
@@ -14,6 +18,7 @@ export function SignUp({navigation}){
     const [password , setPassword] = useState('')
     const [confirmPassword , setConfirmPassword] = useState('')
     const set =["setCpf" , "setName"  ,"setUsername" , "setEmail" , "setPassword" ,  "setConfirm"]
+    
     const listItems = [
         {item: "CPF", keyboardType : 'numeric' , value : cpf , set: setCpf} , 
         {item:"NOME COMPLETO", value : name , set: setName },
@@ -32,9 +37,7 @@ export function SignUp({navigation}){
         }
     })
 
-    function handleItem(e){
-        console.log(e.target.value)
-    }
+   
 
     function confirmNext(){
         setBegin(begin +1)
@@ -44,9 +47,9 @@ export function SignUp({navigation}){
     }
     return(
         <View style={styles.content}>
-             <View style={styles.back}  onPress={() => navigation.navigate('login')}>
+             <View style={styles.back}>
                     <Icon name="arrow-left" size={40} color="#fff" />
-                    <Button  onPress={() => navigation.navigate('login')} title="voltar" color="#fff"/>
+                    <Button  onPress={() => navigation.navigate('login'as never)} title="voltar" color="#fff"/>
             </View>
                
             <SafeAreaView style={styles.contentarea}> 
@@ -57,7 +60,7 @@ export function SignUp({navigation}){
                             <Input 
                                 keyboardType={item.keyboardType ? item.keyboardType : ''} 
                                 value={item.value}
-                                onChangeText ={ (text) => item.set( text)}
+                                onChangeText ={item.set}
                                 
                              />
                 

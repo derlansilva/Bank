@@ -13,11 +13,6 @@ export function Tabs() {
                 </TabItem> 
 
                 <TabItem>
-                    <Icon name="chat-bubble-outline" size={24} color="#fff" />
-                    <TabText>Enviar</TabText>
-                </TabItem> 
-
-                <TabItem>
                     <Icon name="arrow-downward" size={24} color="#fff" />
                     <TabText>Receber</TabText>
                 </TabItem> 
@@ -27,6 +22,11 @@ export function Tabs() {
                     <TabText>Transferir</TabText>
                 </TabItem> 
 
+                <TabItem>
+                    <Icon name="chat-bubble-outline" size={24} color="#fff" />
+                    <TabText>Enviar</TabText>
+                </TabItem> 
+                
                 <TabItem>
                     <Icon name="lock" size={24} color="#fff" />
                     <TabText>Bloquear cartão</TabText>

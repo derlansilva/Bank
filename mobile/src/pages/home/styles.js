@@ -15,7 +15,7 @@ export const Content = styled.View`
 
 `
 
-export const Card = styled(Animated.View)`
+export const Card = styled.View`
     flex: 1;
     background: #fff;
     border-radius : 4px;
