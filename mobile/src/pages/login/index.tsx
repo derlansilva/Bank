@@ -71,9 +71,13 @@ export const SignIn:React.FC = () => {
                 <View style={styles.button} >
                  <Button  disabled={desabled}  onPress={ handleLogin} title="CONTINUAR" color="#fff"/>
                 </View>
+                <View style={styles.buttontext}>
+                    <Button  title="Esqueci minha senha" color="#fff" onPress={() => navigation.navigate("signUp" as never)}/>
+                    <Icon name="arrow-right" size={40} color="#fff" />
+                </View>
 
                 <View style={styles.buttontext}>
-                    <Button  title="Abrir conta" color="#fff" onPress={() => navigation.navigate("signUp" as never)}/>
+                    <Button  title="Ainda não sou cliente" color="#fff" onPress={() => navigation.navigate("signUp" as never)}/>
                     <Icon name="arrow-right" size={40} color="#fff" />
                 </View>
             </SafeAreaView>

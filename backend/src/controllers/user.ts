@@ -1,6 +1,7 @@
 import {Request , Response} from 'express'
 
 import { CreateUserServices } from "../services/userServices/createUserServices";
+import { FindUserServices } from '../services/userServices/findUserServices';
 import { LoginServices } from '../services/userServices/loginServices';
 import { ShowUserServices } from '../services/userServices/showUserServices';
 
@@ -36,7 +37,7 @@ export class User {
     }
    async show(request : Request , response : Response){
 
-    console.log(request)
+        console.log(request)
        const id = request.headers.id
 
        console.log('no user' , id)
@@ -46,6 +47,12 @@ export class User {
 
        const show =await service.show(user_id)
        return response.json(show)
+   }
+   async find(request :Request , response: Response){
+       const {id} = request.params
+
+       const service = new FindUserServices()
+       const result = service.find(id , response)
    }
 
     async update(){

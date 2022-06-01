@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add @react
+  C:\Program Files\nodejs\node.exe C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-app-intro-slider
 
 PATH: 
   C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Users\joder\AppData\Local\Programs\Python\Python39;C:\Users\joder\AppData\Local\Programs\Python\Python39\Scripts;;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\joder\AppData\Local\Microsoft\WindowsApps;C:\Users\joder\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\joder\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\joder\.dotnet\tools;C:\Users\joder\AppData\Roaming\npm;
@@ -14,17 +14,8 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@react: Request "https://registry.yarnpkg.com/@react" returned a 405
-      at Request.params.callback [as _callback] (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67038:18)
-      at Request.self.callback (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
-      at Request.emit (node:events:394:28)
-      at Request.<anonymous> (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
-      at Request.emit (node:events:394:28)
-      at IncomingMessage.<anonymous> (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
-      at Object.onceWrapper (node:events:513:28)
-      at IncomingMessage.emit (node:events:406:35)
-      at endReadableNT (node:internal/streams/readable:1343:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
 
 npm manifest: 
   {
@@ -39,14 +30,14 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
-      "@react-native-async-storage/async-storage": "^1.17.5",
-      "@react-native-community/async-storage": "^1.12.1",
+      "@react-native-async-storage/async-storage": "~1.17.3",
       "@react-native-masked-view/masked-view": "^0.2.6",
       "@react-navigation/core": "^6.2.1",
       "@react-navigation/drawer": "^6.4.1",
       "@react-navigation/native": "^6.0.10",
       "@react-navigation/native-stack": "^6.6.2",
       "@react-navigation/stack": "^6.2.1",
+      "@types/axios": "^0.14.0",
       "@types/react-native-vector-icons": "^6.4.10",
       "@types/react-navigation": "^3.4.0",
       "axios": "^0.27.2",
@@ -1587,19 +1578,12 @@ Lockfile:
       mkdirp "^1.0.4"
       rimraf "^3.0.2"
   
-  "@react-native-async-storage/async-storage@^1.17.5":
+  "@react-native-async-storage/async-storage@~1.17.3":
     version "1.17.5"
     resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.17.5.tgz#8cc3edd305d09a3c252d88921f0d2846a0444f25"
     integrity sha512-0XT5zZa3mh8XfAFYytq9hPyI6w0FJEBED4pjeLc17pkNF9tND86fsTX2pQFr15uV0nvfYeHisbd/mM7bpGrWKA==
     dependencies:
       merge-options "^3.0.4"
-  
-  "@react-native-community/async-storage@^1.12.1":
-    version "1.12.1"
-    resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.12.1.tgz#25f821b4f6b13abe005ad67e47c6f1cee9f27b24"
-    integrity sha512-70WGaH3PKYASi4BThuEEKMkyAgE9k7VytBqmgPRx3MzJx9/MkspwqJGmn3QLCgHLIFUgF1pit2mWICbRJ3T3lg==
-    dependencies:
-      deep-assign "^3.0.0"
   
   "@react-native-community/cli-debugger-ui@^7.0.3":
     version "7.0.3"
@@ -1891,6 +1875,13 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
     integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
+  
+  "@types/axios@^0.14.0":
+    version "0.14.0"
+    resolved "https://registry.yarnpkg.com/@types/axios/-/axios-0.14.0.tgz#ec2300fbe7d7dddd7eb9d3abf87999964cafce46"
+    integrity sha512-KqQnQbdYE54D7oa/UmYVMZKq7CO4l8DEENzOKc4aBRwxCXSlJXGz83flFx5L7AWrOQnmuN3kVsRdt+GZPPjiVQ==
+    dependencies:
+      axios "*"
   
   "@types/graceful-fs@^4.1.2":
     version "4.1.5"
@@ -2250,7 +2241,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
     integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
   
-  axios@^0.27.2:
+  axios@*, axios@^0.27.2:
     version "0.27.2"
     resolved "https://registry.yarnpkg.com/axios/-/axios-0.27.2.tgz#207658cc8621606e586c85db4b41a750e756d972"
     integrity sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==
@@ -3087,13 +3078,6 @@ Lockfile:
     version "0.2.0"
     resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
     integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
-  
-  deep-assign@^3.0.0:
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/deep-assign/-/deep-assign-3.0.0.tgz#c8e4c4d401cba25550a2f0f486a2e75bc5f219a2"
-    integrity sha512-YX2i9XjJ7h5q/aQ/IM9PEwEnDqETAIYbggmdDB3HLTlSgo1CxPsj6pvhPG68rq6SVE0+p+6Ywsm5fTYNrYtBWw==
-    dependencies:
-      is-obj "^1.0.0"
   
   deep-extend@^0.6.0:
     version "0.6.0"
@@ -4292,11 +4276,6 @@ Lockfile:
     version "7.0.0"
     resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
     integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
-  
-  is-obj@^1.0.0:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
-    integrity sha1-PkcprB9f3gJc19g6iW2rn09n2w8=
   
   is-path-cwd@^2.2.0:
     version "2.2.0"

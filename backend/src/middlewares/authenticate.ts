@@ -4,7 +4,7 @@ import {verify } from 'jsonwebtoken'
 interface YpayLoad {
  sun: string
 }
-export function authenticte(request : Request , response :  Response , next: NextFunction){
+export function authenticate(request : Request , response :  Response , next: NextFunction){
     const authToken =  request.headers.authorization;
 
     if(!authToken){

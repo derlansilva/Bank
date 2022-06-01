@@ -16,64 +16,62 @@ type AuthProvider={
 }
 const AuthContext = createContext<AuthContextData>({} as AuthContextData)
 
+type User ={
+    cpf: string,
+    email: string,
+    name: string
+    password : string,
+    username: string,
+    deposit:[]
+    transfer: []
+}
 
 export function AuthProvider(props : AuthProvider){
     const [user , setUser ] = useState<object | null >(null)
-    const [loading , setLoading ] = useState(false)
+    const [loading , setLoading ] = useState(true)
 
     async function Login(cpf :string , password: string){
-        console.log(`No auth  cpf: ${cpf} password : ${password}`)
-        let data = JSON.stringify({
-            cpf: cpf,
-            password: password
-        })
+        setLoading(true)
+    
+        const response  = await api.post("/user/login" ,{cpf:cpf , password : password})
 
-        
-    let headers = {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
-
-    }
-
-        const response  = await api.post("/user/login" ,{cpf:cpf , password : password}, headers)
-
-        console.log("no auth" , response.data)
-        //setLoading(true)
-        /*const response = await SignIn()
+        console.log("no auth" , response)
+        setTimeout(() => {
+            
+        },1000)
+        setLoading(true)
 
 
 
-        setUser(response.user)
-        console.log('response ' ,response)
+        setUser(response.data.user)
         setLoading(false)
-        console.log('no login auth' ,cpf , password)
 
-        await AsyncStorage.setItem('+bank:user' , JSON.stringify(response.user))
-        await AsyncStorage.setItem('+bank:token' , response.token)
-        /*const response = await api.post('/user/login' , {
-            cpf:cpf,
-            password : password
-        })
+        await AsyncStorage.setItem('+bank:user' , JSON.stringify(response.data.user))
+        await AsyncStorage.setItem('+bank:token' , response.data.token)
+        api.defaults.headers.common.authorization = `Bearer ${response.data.token}`
         if(response.data){
             setUser(response.data.user)
-        }*/
+            setLoading(false)
+        }
 
         console.log('user' ,user)
     }
 
     async function SignOut() {
-        await AsyncStorage.clear()
+        AsyncStorage.clear().then(() => {
+            setUser(null)
+        })
     }
     useEffect(() => {
         async function loadStorageData() {
-            const user = await AsyncStorage.getItem('+bank:user')
+            setLoading(false)
+            const userdata = await AsyncStorage.getItem('+bank:user')
             const token =await AsyncStorage.getItem('+bank:token')
 
-            if(user && token){
-                setUser(JSON.parse(user))
-                console.log(user , token)
+            if(userdata && token){
+                setUser(JSON.parse(userdata))
+                console.log(userdata , token)
+                setLoading(false)
             }
         }
 

@@ -15,7 +15,9 @@ export const Input = styled.TextInput`
 export const TextDecoret = styled.Text`
     color: #FFF;
     width: 100%;
+    
     opacity: 0.5;
+
 `
 
 export const ButtonBack = styled.Button`
@@ -76,6 +78,13 @@ export const styles = StyleSheet.create({
         marginLeft:30,
         alignItems: 'center'
     },
+ 
+    alert:{
+        position: 'absolute',
+        color: 'red',
+        width: '50%',
+        marginLeft:170,
+    }
     
     
 });

@@ -15,6 +15,10 @@ export class LoginServices{
         let user  = await prismaCLient.user.findFirst({
             where:{
                 cpf: cpf
+            },
+            include:{
+                deposit:true,
+                transfer:true
             }
         })
 
@@ -32,6 +36,7 @@ export class LoginServices{
 
             if(isPasswordMatch){
                 const id = user.cpf
+                
                 const token  = sign({id} , String(process.env.MY_SECRET) , {
                     expiresIn : '1d'
                 })

@@ -69,6 +69,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginTop:20,
+        marginBottom: 30,
     },
     containerbutton:{
         borderColor: '#fff',
@@ -81,8 +82,9 @@ export const styles = StyleSheet.create({
         color: '#fff'
     },
     buttontext:{
-        marginTop:50,
+        
         flexDirection: 'row',
+        marginBottom: 10,
     }
     
-});
+}); 
