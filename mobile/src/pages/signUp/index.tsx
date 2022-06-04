@@ -32,6 +32,7 @@ export const SignUp: React.FC = () => {
     const [message, setMessage] = useState('')
     const listItems = [
         { item: "CPF", keyboardType: 'numeric', value: cpf, set: setCpf },
+        {item :'NOME COMPLETO' , value: name , set: setName},
         { item: "E-MAIL", value: email, set: setEmail },
         { item: "SENHA", keyboardType: 'numeric', value: password, set: setPassword },
         { item: "CONFIRMAÇAO DE SENHA", keyboardType: 'numeric', value: confirmPassword, set: setConfirmPassword }

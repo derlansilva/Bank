@@ -64,13 +64,12 @@ export function AuthProvider(props : AuthProvider){
     }
     useEffect(() => {
         async function loadStorageData() {
-            setLoading(false)
+           
             const userdata = await AsyncStorage.getItem('+bank:user')
             const token =await AsyncStorage.getItem('+bank:token')
 
             if(userdata && token){
                 setUser(JSON.parse(userdata))
-                console.log(userdata , token)
                 setLoading(false)
             }
         }

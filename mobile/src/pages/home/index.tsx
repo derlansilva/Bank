@@ -8,6 +8,7 @@ import { Hide ,Container,CardHeader , Content , Card , CardContend ,CardFooter ,
 import { useAuth } from '../../contexts/useAuth';
 import { useEffect, useState } from 'react';
 import { Button, View } from 'react-native';
+import { ModalTransfer } from '../../components/Modal/modalTransfer';
 
 type User ={
     cpf: string,
@@ -45,6 +46,7 @@ export function Home() {
             <Content>
               
                 <PanGestureHandler>
+                   
                     <Card>
                         <CardHeader>
                             <Icon name="attach-money" size={28}  color="#666"/>

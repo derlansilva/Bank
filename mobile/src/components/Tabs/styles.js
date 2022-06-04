@@ -14,7 +14,7 @@ export const TabsContainer= styled.ScrollView.attrs({
 
 })``;
 
-export const TabItem = styled.View`
+export const TabItem = styled.TouchableOpacity`
     width : 100px;
     height: 100px;
     background: rgba(255 , 255 ,255,0.2 );
@@ -28,3 +28,6 @@ export const TabText = styled.Text`
     font-size: 13px;
     color: #fff
 `;
+
+export const ModalTransfer = styled.Modal``
+
