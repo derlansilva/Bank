@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-app-intro-slider
+  C:\Program Files\nodejs\node.exe C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add types/react@17.0.2
 
 PATH: 
   C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Users\joder\AppData\Local\Programs\Python\Python39;C:\Users\joder\AppData\Local\Programs\Python\Python39\Scripts;;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\joder\AppData\Local\Microsoft\WindowsApps;C:\Users\joder\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\joder\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\joder\.dotnet\tools;C:\Users\joder\AppData\Roaming\npm;
@@ -14,8 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+  Error: https://registry.yarnpkg.com/types%2freact: Request "https://registry.yarnpkg.com/types%2freact" returned a 405
+      at Request.params.callback [as _callback] (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:67038:18)
+      at Request.self.callback (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140883:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141855:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (C:\Users\joder\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141777:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
   {
@@ -43,9 +52,10 @@ npm manifest:
       "axios": "^0.27.2",
       "expo": "~45.0.0",
       "expo-status-bar": "~1.3.0",
-      "react": "^18.1.0",
+      "react": "17.0.2",
       "react-dom": "17.0.2",
       "react-native": "0.68.2",
+      "react-native-app-intro-slider": "^4.0.4",
       "react-native-gesture-handler": "^2.4.2",
       "react-native-qrcode-svg": "^6.1.2",
       "react-native-reanimated": "^2.8.0",
@@ -5865,6 +5875,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
     integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
   
+  react-native-app-intro-slider@^4.0.4:
+    version "4.0.4"
+    resolved "https://registry.yarnpkg.com/react-native-app-intro-slider/-/react-native-app-intro-slider-4.0.4.tgz#fa5cda7057db62c448ac975ffd2ba0cff94cc8d8"
+    integrity sha512-Zkjaol6X3BbZkHUpVDj2LjdidpS6rCgKi0fx80xgGKa0pHxBRd4swWTv2bHnnvu5k1/HXwYk0mY2TbK+2jHl5w==
+  
   react-native-codegen@^0.0.17:
     version "0.0.17"
     resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.0.17.tgz#83fb814d94061cbd46667f510d2ddba35ffb50ac"
@@ -6026,12 +6041,13 @@ Lockfile:
       object-assign "^4.1.1"
       react-is "^16.12.0 || ^17.0.0"
   
-  react@^18.1.0:
-    version "18.1.0"
-    resolved "https://registry.yarnpkg.com/react/-/react-18.1.0.tgz#6f8620382decb17fdc5cc223a115e2adbf104890"
-    integrity sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==
+  react@17.0.2:
+    version "17.0.2"
+    resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+    integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
     dependencies:
       loose-envify "^1.1.0"
+      object-assign "^4.1.1"
   
   readable-stream@^3.4.0:
     version "3.6.0"

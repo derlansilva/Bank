@@ -12,9 +12,7 @@ export const ModalTransfer = () => {
     const {user} = useAuth()
 
     useEffect(() => {
-        user.deposit.map(item => {
-            setValue(item.value)
-        })
+      
     })
 
     return (

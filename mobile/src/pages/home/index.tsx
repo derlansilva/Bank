@@ -7,8 +7,9 @@ import { PanGestureHandler, TouchableOpacity  } from 'react-native-gesture-handl
 import { Hide ,Container,CardHeader , Content , Card , CardContend ,CardFooter , Title , Description,Annotation} from "./styles";
 import { useAuth } from '../../contexts/useAuth';
 import { useEffect, useState } from 'react';
-import { Button, View } from 'react-native';
+import { Button, View  } from 'react-native';
 import { ModalTransfer } from '../../components/Modal/modalTransfer';
+import { api } from '../../services/api';
 
 type User ={
     cpf: string,
@@ -17,11 +18,11 @@ type User ={
     password : string,
     username: string,
     deposit:[]
-    transfer: []
+    
 }
 
 export function Home() {
-    const [value , setValue] = useState([])
+    const [value , setValue] = useState('')
     const [hide , setHide] = useState(true)
     const {user } = useAuth()
 
@@ -33,19 +34,33 @@ export function Home() {
         }
  
     }
-    useEffect(() => {
-        console.log('user' , user)
-        user.deposit.map(item => {
-            setValue(item.value)
+    async function getTransfers(){
+        const respnse = await api.get('/user/show' , {
+            headers: {
+                'Content-Type': 'application/json',
+                'id': user.cpf
+            }
         })
-        console.log('home ' , user.deposit)
-    })
+
+        console.log('response no home ' , respnse)
+    }
+    useEffect(() => {
+       
+        function getData(){
+            console.log(user.name)
+            user.deposit.map(item =>setValue(item.value))
+        }
+   
+        getData()
+        getTransfers()
+ 
+    },[])
     return (
         <Container>
             <Header/>
             <Content>
               
-                <PanGestureHandler>
+                <>
                    
                     <Card>
                         <CardHeader>
@@ -59,7 +74,7 @@ export function Home() {
                         </CardHeader> 
                         <CardContend>
                             <Title>Saldo</Title>
-                            { hide?<Description>R$ {value},00 </Description> : <Hide> </Hide> }
+                            { hide?<Description>R$ {value} </Description> : <Hide> </Hide> }
                             
                            
                         </CardContend>
@@ -67,7 +82,7 @@ export function Home() {
                             <Annotation>Transferencia de R$ 20,00 recebida de Alinne fonseca hoje  as 10 horas </Annotation>
                         </CardFooter>
                     </Card>
-                </PanGestureHandler>
+                </>
                
             </Content>
             <Tabs/>

@@ -10,8 +10,8 @@ export function Header(){
     const navigation  = useNavigation()
     const {user} = useAuth()
 
-    const [userName , setUserName] = useState([])
-    console.log(user)
+    const [userName , setUserName] = useState('')
+
     const handleMenu =() =>{
         console.log()
     }
