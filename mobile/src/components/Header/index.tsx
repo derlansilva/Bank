@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import { Button } from "react-native";
 import { useAuth } from "../../contexts/useAuth";
 import { useNavigation } from "@react-navigation/native";
+import { Menu } from "../Menu";
 
 export function Header(){
     const navigation  = useNavigation()
@@ -22,7 +23,7 @@ export function Header(){
     return(
         <Container>
             <Top>
-                <Icon name="menu" size={30}  color="#fff" onPress={() => navigation.navigate('menu' as never)} />
+                <Menu/>
                 <Title>Olá {userName}</Title>
             </Top>
         </Container>

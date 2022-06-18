@@ -8,7 +8,7 @@ import { Hide ,Container,CardHeader , Content , Card , CardContend ,CardFooter ,
 import { useAuth } from '../../contexts/useAuth';
 import { useEffect, useState } from 'react';
 import { Button, View  } from 'react-native';
-import { ModalTransfer } from '../../components/Modal/modalTransfer';
+import { ModalTransfer } from '../../components/Modal/transfer/modalTransfer';
 import { api } from '../../services/api';
 
 type User ={
@@ -35,14 +35,14 @@ export function Home() {
  
     }
     async function getTransfers(){
-        const respnse = await api.get('/user/show' , {
+        const response = await api.get('/user/show' , {
             headers: {
                 'Content-Type': 'application/json',
                 'id': user.cpf
             }
         })
 
-        console.log('response no home ' , respnse)
+        console.log('response no home ' , response)
     }
     useEffect(() => {
        

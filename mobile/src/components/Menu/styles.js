@@ -66,6 +66,7 @@ export const SignOutButton = styled.TouchableOpacity`
   
 `
 export const SignOutButtonText = styled.Text`
-  color: red
+  color: red;
   font-size: 25px;
 `
+
